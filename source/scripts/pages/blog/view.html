@@ -1,4 +1,4 @@
-﻿<section id="blog" class="section container" data-ng-cloak>
+﻿<section id="blog" class="section container" data-ng-cloak scroll="loadMore()">
     <div class="center">
         <h2>Blogs</h2>
         <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
@@ -12,7 +12,7 @@
                 </div><!--/.blog-item-->
 
                 <ul class="pagination pagination-lg loadmore" data-ng-class="{'disabled' : posts.length <= maxItem}">
-                    <li><a href="" data-ng-click="maxItem = maxItem + 2"><i class="fa fa-long-arrow-down"></i>Load more</a></li>
+                    <li><a href="" data-ng-click="loadMore()"><i class="fa fa-long-arrow-down"></i>Load more</a></li>
                 </ul><!--/.pagination-->
             </div><!--/.col-md-8-->
 

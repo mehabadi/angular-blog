@@ -23,7 +23,10 @@
 			{
 				console.log(status);
 			});
-			
+
+			$scope.loadMore = function() {
+				$scope.maxItem = $scope.maxItem + 2
+			};
 		}];
 
     _controller.$inject = _injectParams;
