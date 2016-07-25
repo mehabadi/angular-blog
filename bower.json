@@ -31,7 +31,8 @@
     "angular-material": "^1.0.5",
     "angular-resource": "^1.5.0",
     "angular-sanitize": "^1.5.0",
-    "domReady": "requirejs-domready#^2.0.1"
+    "domReady": "requirejs-domready#^2.0.1",
+    "angular-loading-bar": "^0.9.0"
   },
   "private": true
 }

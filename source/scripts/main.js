@@ -20,6 +20,7 @@
             'routeResolver': './common/services/routeResolver',
             'routes': 'routes',
             'prettyPhoto': '../assets/js/jquery.prettyPhoto',
+            'angular-loading-bar': '../assets/js/loading-bar.min',
         },
         shim: {            
             angular: {
@@ -53,10 +54,13 @@
                 deps: ['angular'],
                 exports: 'angular'
             },
-            'angular-material':{
-                deps: ['angular', 'angular-route', 'angular-resource', 'angular-animation', 'angular-aria', 'angular-messages', 'angular-sanitize'],
+            'angular-loading-bar': {
+                deps: ['angular'],
+                exports: 'angular'
             },
-
+            'angular-material':{
+                deps: ['angular', 'angular-route', 'angular-resource', 'angular-animation', 'angular-aria', 'angular-messages', 'angular-sanitize', 'angular-loading-bar'],
+            },
             'routeResolver': {
                 deps: ['angular']
             },

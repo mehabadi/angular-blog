@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    var app = angular.module('app', ['ngRoute', 'ngMaterial', 'routeResolverService', 'Routes', 'ngResource', 'ngSanitize']);
+    var app = angular.module('app', ['ngRoute', 'ngMaterial', 'routeResolverService', 'Routes', 'ngResource', 'ngSanitize', 'angular-loading-bar', 'ngAnimate']);
     
     //app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
     //    $sceDelegateProvider.resourceUrlWhitelist(['self', /^https?:\/\/(cdn\.)?localhost/]);

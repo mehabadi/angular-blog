@@ -55,6 +55,7 @@ gulp.task('loadScripts', function ()
             config.bowerDir + '/requirejs/require.js',
             config.bowerDir + '/text/text.js',
             config.vendorDir + '/prettyPhoto/js/jquery.prettyPhoto.js',
+            config.bowerDir + '/angular-loading-bar/build/loading-bar.min.js',
         ])
         .on('error', notify.onError(function (error)
         {
@@ -87,6 +88,7 @@ gulp.task('loadCss', function ()
             config.bowerDir + '/angular-material/angular-material.min.css',
             config.bowerDir + '/animate.css/animate.min.css',
             config.vendorDir + '/prettyPhoto/css/prettyPhoto.css',
+            config.bowerDir + '/angular-loading-bar/build/loading-bar.min.css',
             config.sourceDir + '/styles/style.css'
         ])
         .pipe(concat('style.css'))
@@ -242,7 +244,8 @@ gulp.task('browserSync', function ()
 // Retrun the task when a file changes
 gulp.task('run', ['loadCss', 'browserSync'], function ()
 {
-    gulp.watch(config.sassPath + '/**/*.scss', ['loadCss']);
+    gulp.watch(config.sourceDir + '/styles/**/*.scss', ['sass']);
+    gulp.watch(config.sourceDir + '/styles/**/*.css', ['loadCss']);
     gulp.watch(config.htmlPath, ['html']);
     //browserSync.watch('./*.html').on('change', browserSync.reload); // browserSync watch task
 });

@@ -2827,6 +2827,17 @@ shortcodes page css
 
 /* put your custom styles here */
 [ng-cloak]{display:none;}
+#loading-bar .bar{    background-color: #c52d2f; height: 4px;}
+#loading-bar .peg {
+    -moz-box-shadow: #c52d2f 1px 0 6px 1px;
+    -ms-box-shadow: #c52d2f 1px 0 6px 1px;
+    -webkit-box-shadow: #c52d2f 1px 0 6px 1px;
+    box-shadow: #c52d2f 1px 0 6px 1px;
+}
+#loading-bar-spinner .spinner-icon {
+    border-top-color:  #c52d2f;
+    border-left-color: #c52d2f;
+}
 .loadmore{
     width:100%;
 }
