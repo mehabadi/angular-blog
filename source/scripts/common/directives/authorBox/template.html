@@ -1,6 +1,6 @@
 <div class="media reply_section">
     <div class="pull-left post_reply text-center">
-        <a href="#"><img ng-src="{{user.image}}" class="img-circle" alt="" /></a>
+        <a data-ng-href="/#/user/{{user.id}}"><gravatar email="{{user.email}}" class="img-circle" data-ng-if="user"></gravatar></a>
         <ul>
             <li><a data-ng-href="mailto:{{user.email}}"><i class="fa fa-envelope"></i></a></li>
             <li><a data-ng-href="{{user.website}}" target="_blank"><i class="fa fa-link"></i></a></li>

@@ -32,7 +32,8 @@
     "angular-resource": "^1.5.0",
     "angular-sanitize": "^1.5.0",
     "domReady": "requirejs-domready#^2.0.1",
-    "angular-loading-bar": "^0.9.0"
+    "angular-loading-bar": "^0.9.0",
+    "angular-md5": "^0.1.10"
   },
   "private": true
 }

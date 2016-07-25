@@ -21,6 +21,7 @@
             'routes': 'routes',
             'prettyPhoto': '../assets/js/jquery.prettyPhoto',
             'angular-loading-bar': '../assets/js/loading-bar.min',
+            'angular-md5': '../assets/js/angular-md5.min',
         },
         shim: {            
             angular: {
@@ -58,8 +59,12 @@
                 deps: ['angular'],
                 exports: 'angular'
             },
+            'angular-md5': {
+                deps: ['angular'],
+                exports: 'angular'
+            },
             'angular-material':{
-                deps: ['angular', 'angular-route', 'angular-resource', 'angular-animation', 'angular-aria', 'angular-messages', 'angular-sanitize', 'angular-loading-bar'],
+                deps: ['angular', 'angular-route', 'angular-resource', 'angular-animation', 'angular-aria', 'angular-messages', 'angular-sanitize', 'angular-loading-bar', 'angular-md5'],
             },
             'routeResolver': {
                 deps: ['angular']
