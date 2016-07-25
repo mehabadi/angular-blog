@@ -1,0 +1,9 @@
+<div data-ng-repeat="comment in comments | orderBy: '-id' | limitTo: 5">
+    <div class="single_comments">
+        <gravatar email="{{comment.email}}"></gravatar>
+        <p>{{comment.name}}</p>
+        <div class="entry-meta small muted">
+            <span>By <a>{{comment.email}}</a></span>
+        </div>
+    </div>
+</div>

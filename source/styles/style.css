@@ -2826,7 +2826,9 @@ shortcodes page css
 }
 
 /* put your custom styles here */
-[ng-cloak]{display:none;}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+    display: none !important;
+}
 #loading-bar .bar{    background-color: #c52d2f; height: 4px;}
 #loading-bar .peg {
     -moz-box-shadow: #c52d2f 1px 0 6px 1px;
@@ -2864,3 +2866,5 @@ shortcodes page css
     width: 80%;
     float: right;
 }
+.single_comments img{height: 45px;}
+.single_comments p{display: block;overflow: hidden;text-overflow: ellipsis;width: 85%;white-space: nowrap;}

@@ -12,7 +12,7 @@ define(['app'], function (app)
         {
             var deferred = $q.defer();
 
-            $http.jsonp(_serviceBase + 'comments?callback=JSON_CALLBACK')
+            $http.jsonp(_serviceBase + '?callback=JSON_CALLBACK')
                 .success(function (data, status, headers, config)
                 {
                     deferred.resolve(data);

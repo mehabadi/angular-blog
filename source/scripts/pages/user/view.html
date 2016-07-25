@@ -7,7 +7,7 @@
     <div class="blog">
         <div class="row">
             <div class="col-md-8">
-                <div class="blog-item" data-ng-repeat="post in posts | limitTo: maxItem | filter: search">
+                <div class="blog-item" data-ng-repeat="post in posts | orderBy:'-id' | limitTo: maxItem | filter: search">
                     <blog-item post="post"></blog-item>
                 </div><!--/.blog-item-->
 
