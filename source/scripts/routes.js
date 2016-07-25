@@ -40,53 +40,21 @@ define([], function ()
                     controllerAs: 'blog',
                     //secure: false
                 },
-                '/:module': {
-                    alias: 'home',
-                    controller: 'home',
-                    templateUrl: '/scripts/pages/home/view.html',
-                    dependencies: [],
-                    controllerAs: 'home',
-                    //secure: false
-                },
-                '/:module/:action/:id': {
-                    alias: 'home',
-                    dependencies: [],
-                    controllerAs: 'home',
-                    //secure: false
-                },
-
-                //'/about': {
-                //    alias: 'about',
+                //'/:module': {
+                //    alias: 'home',
+                //    controller: 'home',
+                //    templateUrl: '/scripts/pages/home/view.html',
                 //    dependencies: [],
-                //    controllerAs: 'about',
+                //    controllerAs: 'home',
                 //    //secure: false
                 //},
-                //'/events': {
-                //    alias: 'event',
+                //'/:module/:action/:id': {
+                //    alias: 'home',
                 //    dependencies: [],
-                //    controllerAs: 'event',
-                //    secure: false
+                //    controllerAs: 'home',
+                //    //secure: false
                 //},
-                //'/event/:eventId': {
-                //    alias: 'event',
-                //    dependencies: [],
-                //    controllerAs: 'event',
-                //    secure: false
-                //},
-                //'/content': {
-                //    alias: 'content',
-                //    dependencies: [],
-                //    controllerAs: 'content',
-                //    secure: false
-                //},
-                //'/content/view/:id': {
-                //    alias: 'contentView',
-                //    dependencies: [
-                //        ''
-                //    ],
-                //    controllerAs: 'content',
-                //    secure: false
-                //}
+
             },
 
         };
