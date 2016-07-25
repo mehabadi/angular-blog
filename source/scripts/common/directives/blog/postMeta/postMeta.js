@@ -7,8 +7,28 @@ define(['app', 'text!./template.html'],
 
         var _directive = function ()
         {
-            var _controller = ['$scope', function controller($scope)
+            var _controller =
+                ['$scope','commentService','userService',
+                function controller($scope, commentService, userService)
             {
+                $scope.comments = 0;
+                var comments = commentService.getCommentByPostId($scope.postId);
+                comments.then(function (data)
+                {
+                    $scope.comments = data.length;
+                }, function (status)
+                {
+                    console.log(status);
+                });
+
+                var data = userService.getUserById($scope.userId);
+                data.then(function (data)
+                {
+                    $scope.user = data;
+                }, function (status)
+                {
+                    console.log(status);
+                });
             }];
 
             return {
@@ -17,6 +37,8 @@ define(['app', 'text!./template.html'],
                 template: template,
                 controller: _controller,
                 scope: {
+                    userId: '=',
+                    postId: '='
                 }
             };
         };

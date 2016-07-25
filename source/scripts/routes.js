@@ -26,12 +26,10 @@ define([], function ()
                     controllerAs: 'single',
                     //secure: false
                 },
-				'/about': {
-                    alias: 'about',
-                    controller: 'about',
-                    templateUrl: '/scripts/pages/about/view.html',
+                '/user/:id': {
+                    alias: 'user',
                     dependencies: [],
-                    controllerAs: 'about',
+                    controllerAs: 'user',
                     //secure: false
                 },
                 '/': {

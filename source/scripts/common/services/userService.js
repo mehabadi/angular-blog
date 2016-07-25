@@ -51,9 +51,29 @@ define(['app'], function (app)
             return deferred.promise;
         }
 
+        var _getUserPosts = function (userId)
+        {
+            var deferred = $q.defer();
+
+            var request = {
+                method: "GET",
+                url: _serviceBase + '/' + userId + '/posts',
+            };
+            $http(request)
+                .then(function (results)
+                {
+                    deferred.resolve(results.data);
+                }, function (status)
+                {
+                    deferred.reject(status);
+                });
+            return deferred.promise;
+        }
+
         return {
             getAllUsers: _getAllUsers,
-            getUserById: _getUserById
+            getUserById: _getUserById,
+            getUserPosts: _getUserPosts
         };
     };
 

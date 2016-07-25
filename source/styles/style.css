@@ -2846,8 +2846,21 @@ shortcodes page css
     text-align: center;
     padding: 15px!important;
 }
+.loadmore.disabled li:hover a{
+    color: #23527c;
+    background-color: #eee!important;
+    border-color: #ddd!important;
+}
 .post_reply ul li a i.fa-envelope {background: #0182C4;}
 .post_reply ul li a i.fa-link {background: none repeat scroll 0 0 #3FC1FE;}
 .post_reply ul li a i{ border-radius: 0px;padding-top: 4px; }
 .post_reply ul{margin-left: 10px;}
 .comment_section>.pull-left {margin-right: 9px;}
+.blog .blog-item .entry-meta > span a {
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    float: right;
+}
