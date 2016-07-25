@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-2 text-center">
+        <post-meta></post-meta>
+    </div>
+
+    <div class="col-xs-12 col-sm-10 blog-content">
+        <a ng-href="/#/blog/single/{{post.id}}"><post-image w="620" h="248" class="img-responsive img-blog" alt="{{post.title}}"></post-image></a>
+        <h2><a ng-href="/#/blog/single/{{post.id}}">{{post.title}}</a></h2>
+        <h3>{{post.body}}</h3>
+        <a class="btn btn-primary readmore" ng-href="/#/blog/single/{{post.id}}">Read More <i class="fa fa-angle-right"></i></a>
+    </div>
+</div>

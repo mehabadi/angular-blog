@@ -1,0 +1,45 @@
+{
+  "name": "angularspa",
+  "version": "0.0.1",
+  "description": "This is a test application, and works based on https://jsonplaceholder.typicode.com/ API Service",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohsen Mah Abadi",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-install": "^0.6.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-size": "^2.0.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-uncss": "^1.0.4",
+    "requirejs": "^2.1.22",
+    "run-sequence": "^1.1.5"
+  },
+  "dependencies": {
+    "angular": "^1.5.0",
+    "modernizr": "^3.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohsen198x/angular-test-app.git"
+  },
+  "keywords": [
+    "angular",
+    "Api",
+    "Blogs"
+  ],
+  "bugs": {
+    "url": "https://github.com/mohsen198x/angular-test-app/issues"
+  },
+  "homepage": "https://github.com/mohsen198x/angular-test-app#readme"
+}

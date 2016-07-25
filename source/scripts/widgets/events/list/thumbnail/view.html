@@ -1,0 +1,24 @@
+﻿<a ng-href="#events/{{event.id}}">
+    <div class="well hoverwell">
+        <div class="row">
+            <div class="col-sm-11">
+                <h2>{{event.name | uppercase}}</h2>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div><strong>Date:</strong> {{event.date}}</div>
+                <div><strong>Time:</strong> {{event.time}}</div>
+            </div>
+            <div class="col-sm-4">
+                <address>
+                    <strong>Address:</strong><br />
+                    {{event.location.address}}<br />
+                    {{event.location.city}}, {{event.location.province}}
+                </address>
+            </div>
+        </div>
+    </div>
+</a>

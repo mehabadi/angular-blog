@@ -1,0 +1,37 @@
+{
+  "name": "angularspa",
+  "version": "0.1",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Mohsen Mah Abadi<m.mehabadi@gmail.com>"
+  ],
+  "directory": "assets",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "*",
+    "font-awesome": "fontawesome#^4.5.0",
+    "jquery": "^2.2.0",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6",
+    "respond": "^1.4.2",
+    "html5shiv": "^3.7.3",
+    "angular-animate": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "animate.css": "^3.5.2",
+    "requirejs": "^2.1.22",
+    "text": "requirejs/text#^2.0.14",
+    "angular-material": "^1.0.5",
+    "angular-resource": "^1.5.0",
+    "angular-sanitize": "^1.5.0",
+    "domReady": "requirejs-domready#^2.0.1"
+  },
+  "private": true
+}
