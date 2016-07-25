@@ -2,6 +2,7 @@
     <post-image w="750" h="357" class="img-responsive img-blog" alt="{{post.title}}"></post-image>
     <div class="row">
         <div class="col-xs-12 col-sm-2 text-center">
+            <post-meta user-id="post.userId" post-id="post.id" data-ng-if="post"></post-meta>
         </div>
         <div class="col-xs-12 col-sm-10 blog-content">
             <h2>{{post.title}}</h2>
