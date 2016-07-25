@@ -1,0 +1,32 @@
+<aside class="col-md-4" data-ng-cloak>
+    <div class="widget search" data-ng-show="showSearch">
+        <form role="form">
+            <input type="text" data-ng-model="search.title" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+        </form>
+    </div><!--/.search-->
+
+
+    <div class="widget categories" data-ng-show="showPosts">
+        <h3>Recent Posts</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <recent-posts/>
+            </div>
+        </div>
+    </div><!--/.recent posts-->
+
+    <div class="widget categories" data-ng-show="showComments">
+        <h3>Recent Comments</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <recent-comments/>
+            </div>
+        </div>
+    </div><!--/.recent comments-->
+
+    <div class="widget blog_gallery" data-ng-show="showPhotos">
+        <h3>Recent Photos</h3>
+        <recent-photos/>
+    </div><!--/.blog_gallery-->
+
+</aside>

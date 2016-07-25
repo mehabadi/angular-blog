@@ -2858,7 +2858,7 @@ shortcodes page css
 .post_reply ul li a i{ border-radius: 0px;padding-top: 4px; }
 .post_reply ul{margin-left: 10px;}
 .comment_section>.pull-left {margin-right: 9px;}
-.blog .blog-item .entry-meta > span a {
+.blog .blog-item .entry-meta > span a,.widget .blog-content h4 {
     white-space: nowrap;
     display: block;
     overflow: hidden;
@@ -2868,3 +2868,5 @@ shortcodes page css
 }
 .single_comments img{height: 45px;}
 .single_comments p{display: block;overflow: hidden;text-overflow: ellipsis;width: 85%;white-space: nowrap;}
+.widget .blog-content{margin-bottom: 20px;border-bottom: 1px solid #eee;}
+.widget .blog-content h4 {width: 100%}

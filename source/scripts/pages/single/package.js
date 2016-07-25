@@ -7,4 +7,5 @@
 	'../../common/directives/authorBox/package.js',
 	'../../common/directives/comment/item/package.js',
 	'../../common/directives/comment/form/package.js',
+	'../../common/directives/sidebar/package.js',
 ], function () { 'use strict'; });

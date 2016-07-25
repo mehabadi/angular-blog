@@ -5,8 +5,8 @@
     var _injectParams = ['$scope'];
 
     var _controller = 
-		['$scope', '$rootScope', 'postService', '$window',
-		function ($scope, $rootScope, postService, $window)
+		['$scope', '$rootScope', 'postService',
+		function ($scope, $rootScope, postService)
 		{
 			$rootScope.pageTitle = "Blog | Angular Blog";
 			$rootScope.currentPage = "blog";
