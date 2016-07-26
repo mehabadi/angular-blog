@@ -33,7 +33,8 @@
     "angular-sanitize": "^1.5.0",
     "domReady": "requirejs-domready#^2.0.1",
     "angular-loading-bar": "^0.9.0",
-    "angular-md5": "^0.1.10"
+    "angular-md5": "^0.1.10",
+    "angular-cache": "^4.6.0"
   },
   "private": true
 }

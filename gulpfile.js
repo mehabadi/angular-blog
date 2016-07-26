@@ -57,6 +57,7 @@ gulp.task('loadScripts', function ()
             config.vendorDir + '/prettyPhoto/js/jquery.prettyPhoto.js',
             config.bowerDir + '/angular-loading-bar/build/loading-bar.min.js',
             config.bowerDir + '/angular-md5/angular-md5.min.js',
+            config.bowerDir + '/angular-cache/dist/angular-cache.min.js',
         ])
         .on('error', notify.onError(function (error)
         {

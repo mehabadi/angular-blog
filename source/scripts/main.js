@@ -22,6 +22,7 @@
             'prettyPhoto': '../assets/js/jquery.prettyPhoto',
             'angular-loading-bar': '../assets/js/loading-bar.min',
             'angular-md5': '../assets/js/angular-md5.min',
+            'angular-cache': '../assets/js/angular-cache.min',
         },
         shim: {            
             angular: {
@@ -63,8 +64,12 @@
                 deps: ['angular'],
                 exports: 'angular'
             },
+            'angular-cache': {
+                deps: ['angular'],
+                exports: 'angular'
+            },
             'angular-material':{
-                deps: ['angular', 'angular-route', 'angular-resource', 'angular-animation', 'angular-aria', 'angular-messages', 'angular-sanitize', 'angular-loading-bar', 'angular-md5'],
+                deps: ['angular', 'angular-route', 'angular-resource', 'angular-animation', 'angular-aria', 'angular-messages', 'angular-sanitize', 'angular-loading-bar', 'angular-md5', 'angular-cache'],
             },
             'routeResolver': {
                 deps: ['angular']

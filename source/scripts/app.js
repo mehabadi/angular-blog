@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    var app = angular.module('app', ['ngRoute', 'ngMaterial', 'routeResolverService', 'Routes', 'ngResource', 'ngSanitize', 'angular-loading-bar', 'ngAnimate', 'angular-md5']);
+    var app = angular.module('app', ['ngRoute', 'ngMaterial', 'routeResolverService', 'Routes', 'ngResource', 'ngSanitize', 'angular-loading-bar', 'ngAnimate', 'angular-md5', 'angular-cache']);
     
     //app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
     //    $sceDelegateProvider.resourceUrlWhitelist(['self', /^https?:\/\/(cdn\.)?localhost/]);
@@ -20,9 +20,10 @@
             '$provide',
             '$locationProvider',
             'routeConfigProvider',
+            'CacheFactoryProvider',
 
             function ($httpProvider, $routeProvider, routeResolverProvider, $controllerProvider,
-                      $compileProvider, $filterProvider, $provide, $locationProvider, routeConfigProvider)
+                      $compileProvider, $filterProvider, $provide, $locationProvider, routeConfigProvider, CacheFactoryProvider)
             {
                 app.register =
                 {
@@ -35,6 +36,8 @@
                 app.directive = $compileProvider.directive;
                 app.factory = $provide.factory;
                 app.service = $provide.service;
+
+                angular.extend(CacheFactoryProvider.defaults, { maxAge: 60 * 60 * 1000 });
 
                 //$locationProvider.html5Mode({
                 //    enabled: true,
