@@ -9,7 +9,7 @@
 		function ($scope, $rootScope, postService, commentService, $routeParams)
 		{
 			$rootScope.pageTitle = "Blog";
-			$rootScope.currentPage = "blog";
+			$rootScope.currentPage = "single";
 			$scope.user;
 
 			//get post details

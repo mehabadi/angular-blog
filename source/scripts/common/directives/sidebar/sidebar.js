@@ -7,11 +7,19 @@ define(['app', 'text!./template.html'],
 
         var _directive = function ()
         {
+            var _controller =
+                ['$scope','$rootScope', function controller($scope, $rootScope)
+                {
+                    ///$rootScope.search = $scope.search;
+                }];
+
             return {
                 restrict: 'E',
                 replace: true,
                 template: template,
+                controller: _controller,
                 scope: {
+                    search: '=',
                     showSearch: '=',
                     showPosts: '=',
                     showComments: '=',

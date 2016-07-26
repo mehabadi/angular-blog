@@ -1,7 +1,7 @@
 <div  data-ng-cloak>
     <ul class="sidebar-gallery">
         <li data-ng-repeat="photo in photos | orderBy: '-id' | limitTo: 6">
-            <a href="/#/photos/"><img data-ng-src="{{photo.thumbnailUrl}}" alt="" /></a>
+            <a href="/#/gallery/"><img data-ng-src="{{photo.thumbnailUrl}}" alt="" /></a>
         </li>
     </ul>
 </div>

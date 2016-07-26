@@ -9,7 +9,7 @@
 		function ($scope, $rootScope, $routeParams, userService)
 		{
 			$rootScope.pageTitle = "Users Posts | Angular Blog";
-			$rootScope.currentPage = "blog";
+			$rootScope.currentPage = "user";
 
 			$scope.maxItem = 2;
 			//var blog = this;
