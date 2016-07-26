@@ -2,24 +2,28 @@ define(['app'], function (app)
 {
     'use strict';
 
-    var _injectParams = ['$http', '$q'];
+    var _injectParams = ['$http', '$q', 'CacheFactory'];
 
-    var _service = function ($http, $q)
+    var _service = function ($http, $q, CacheFactory)
     {
-        var _headers = {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        };
+        var _self = this;
 
         var _serviceBase = 'https://jsonplaceholder.typicode.com/users';
 
-        var _getAllUsers = function ()
+        if (!CacheFactory.get('userCache')) {
+            CacheFactory.createCache('userCache', {
+                deleteOnExpire: 'aggressive',
+                recycleFreq: 60000
+            });
+        }
+
+        var _userCache = CacheFactory.get('userCache');
+
+        _self.getAllUsers = function ()
         {
             var deferred = $q.defer();
 
-            $http.jsonp(_serviceBase + '?callback=JSON_CALLBACK')
+            $http.get(_serviceBase, {cache: _userCache})
                 .success(function (data, status, headers, config)
                 {
                     deferred.resolve(data);
@@ -32,48 +36,44 @@ define(['app'], function (app)
             return deferred.promise;
         }
 
-        var _getUserById = function (userId)
+        _self.getUserById = function (userId)
         {
             var deferred = $q.defer();
 
-            var request = {
-                method: "GET",
-                url: _serviceBase + '/' + userId,
-            };
-            $http(request)
-                .then(function (results)
+            $http.get(_serviceBase + '/' + userId, {cache: _userCache})
+                .success(function (data, status, headers, config)
                 {
-                    deferred.resolve(results.data);
-                }, function (status)
+                    deferred.resolve(data);
+                })
+                .error(function (data, status, headers, config)
                 {
                     deferred.reject(status);
                 });
+
             return deferred.promise;
         }
 
-        var _getUserPosts = function (userId)
+        _self.getUserPosts = function (userId)
         {
             var deferred = $q.defer();
 
-            var request = {
-                method: "GET",
-                url: _serviceBase + '/' + userId + '/posts',
-            };
-            $http(request)
-                .then(function (results)
+            $http.get(_serviceBase + '/' + userId + '/posts', {cache: _userCache})
+                .success(function (data, status, headers, config)
                 {
-                    deferred.resolve(results.data);
-                }, function (status)
+                    deferred.resolve(data);
+                })
+                .error(function (data, status, headers, config)
                 {
                     deferred.reject(status);
                 });
+
             return deferred.promise;
         }
 
         return {
-            getAllUsers: _getAllUsers,
-            getUserById: _getUserById,
-            getUserPosts: _getUserPosts
+            getAllUsers: _self.getAllUsers,
+            getUserById: _self.getUserById,
+            getUserPosts: _self.getUserPosts
         };
     };
 

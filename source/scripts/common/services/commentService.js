@@ -2,17 +2,28 @@ define(['app'], function (app)
 {
     'use strict';
 
-    var _injectParams = ['$http', '$resource', '$q'];
+    var _injectParams = ['$http', '$q', 'CacheFactory'];
 
-    var _service = function ($http, $resource, $q)
+    var _service = function ($http, $q, CacheFactory)
     {
+        var _self = this;
+
         var _serviceBase = 'https://jsonplaceholder.typicode.com/comments';
 
-        var _getAllComments = function ()
+        if (!CacheFactory.get('commentCache')) {
+            CacheFactory.createCache('commentCache', {
+                deleteOnExpire: 'aggressive',
+                recycleFreq: 60000
+            });
+        }
+
+        var _commentCache = CacheFactory.get('commentCache');
+
+        _self.getAllComments = function ()
         {
             var deferred = $q.defer();
 
-            $http.jsonp(_serviceBase + '?callback=JSON_CALLBACK')
+            $http.get(_serviceBase, {cache: _commentCache})
                 .success(function (data, status, headers, config)
                 {
                     deferred.resolve(data);
@@ -25,31 +36,11 @@ define(['app'], function (app)
             return deferred.promise;
         }
 
-        var _getCommentByPostId = function (postId)
-        {
-            var deferred = $q.defer();
 
-            var request = {
-                method: "GET",
-                url: _serviceBase,
-                params: { postId: postId }
-            };
-            $http(request)
-                .then(function (results)
-                {
-                    deferred.resolve(results.data);
-                }, function (status)
-                {
-                    deferred.reject(status);
-                });
-
-
-            return deferred.promise;
-        }
 
         return {
-            getAllComments: _getAllComments,
-            getCommentByPostId: _getCommentByPostId
+            getAllComments: _self.getAllComments,
+            getCommentByPostId: _self.getCommentByPostId
         };
     };
 
