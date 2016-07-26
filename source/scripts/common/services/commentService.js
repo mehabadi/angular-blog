@@ -36,8 +36,6 @@ define(['app'], function (app)
             return deferred.promise;
         }
 
-
-
         return {
             getAllComments: _self.getAllComments,
             getCommentByPostId: _self.getCommentByPostId

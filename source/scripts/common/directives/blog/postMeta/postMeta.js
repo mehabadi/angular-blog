@@ -8,11 +8,11 @@ define(['app', 'text!./template.html'],
         var _directive = function ()
         {
             var _controller =
-                ['$scope','commentService','userService',
-                function controller($scope, commentService, userService)
+                ['$scope','postService','userService',
+                function controller($scope, postService, userService)
             {
                 $scope.comments = 0;
-                var comments = commentService.getCommentByPostId($scope.postId);
+                var comments = postService.getCommentsByPostId($scope.postId);
                 comments.then(function (data)
                 {
                     $scope.comments = data.length;

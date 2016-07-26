@@ -8,8 +8,20 @@ define(['app', 'text!./template.html'],
         var _directive = function ()
         {
             var _controller =
-                ['$scope', function controller($scope)
+                ['$scope', 'userService',
+                function controller($scope, userService)
                 {
+                    if($scope.userId){
+                        //get author information
+                        var data = userService.getUserById($scope.userId);
+                        data.then(function (data)
+                        {
+                            $scope.user = data;
+                        }, function (status)
+                        {
+                            console.log(status);
+                        });
+                    }
                 }];
 
             return {
@@ -17,6 +29,9 @@ define(['app', 'text!./template.html'],
                 replace: true,
                 template: template,
                 controller: _controller,
+                scope:{
+                    userId : '='
+                }
             };
         };
 

@@ -8,8 +8,8 @@ define(['app', 'text!./template.html'],
         var _directive = function ()
         {
             var _controller =
-                ['$scope','commentService','postService',
-                function controller($scope, commentService, postService)
+                ['$scope','commentService',
+                function controller($scope, commentService)
                 {
                     var data = commentService.getAllComments();
                     data.then(function (data)

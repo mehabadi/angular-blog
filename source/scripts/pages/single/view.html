@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-8">
                 <blog-view post="post" data-ng-if="post"></blog-view>
-                <author-box user="user" data-ng-if="user"></author-box>
+                <author-box user-id="post.userId" data-ng-if="post"></author-box>
                 <h3 id="comments_title">{{comments.length}} Comments</h3>
                 <div data-ng-repeat="item in comments">
                     <comment-item comment="item"></comment-item>

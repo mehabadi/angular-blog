@@ -7,12 +7,10 @@ define(['app', 'text!./template.html'],
 
         var _directive = function ()
         {
-            var _controller = ['$scope', function controller($scope){}];
             return {
                 restrict: 'E',
                 replace: true,
                 template: template,
-                controller: _controller,
                 scope: {
                     post: '='
                 }

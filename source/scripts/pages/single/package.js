@@ -1,6 +1,5 @@
 ﻿define([
 	'../../common/services/postService.js',
-	'../../common/services/userService.js',
 	'../../common/services/commentService.js',
 	'../../common/directives/blog/postMeta/package.js',
 	'../../common/directives/blog/view/package.js',
