@@ -14,8 +14,20 @@ define([], function ()
             defaultRoutePath: '/',
             routes:
             {
-				'/blog': {
-                    alias: 'blog',                    
+				'/gallery': {
+                    alias: 'gallery',
+                    dependencies: [],
+                    controllerAs: 'gallery',
+                    //secure: false
+                },
+                '/gallery/album/:id': {
+                    alias: 'album',
+                    dependencies: [],
+                    controllerAs: 'album',
+                    //secure: false
+                },
+                '/blog': {
+                    alias: 'blog',
                     dependencies: [],
                     controllerAs: 'blog',
                     //secure: false

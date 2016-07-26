@@ -1,0 +1,21 @@
+﻿<section class="section"  id="portfolio" data-ng-cloak scroll="loadMore()">
+    <div class="container">
+        <div class="center">
+            <h2>Gallery</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+        </div>
+
+        <div class="row">
+            <div class="portfolio-items">
+
+                <div data-ng-repeat="album in albums | limitTo: maxItem" class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
+                    <album-thumbnail album="album"/>
+                </div><!--/.portfolio-item-->
+
+                <ul class="pagination pagination-lg loadmore" data-ng-class="{'disabled' : albums.length <= maxItem}">
+                    <li><a href="" data-ng-click="loadMore()"><i class="fa fa-long-arrow-down"></i>Load more</a></li>
+                </ul><!--/.pagination-->
+            </div>
+        </div>
+    </div>
+</section><!--/#portfolio-item-->

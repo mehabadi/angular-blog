@@ -1,0 +1,1 @@
+﻿define(['../../common/services/albumService.js'], function () { 'use strict'; });

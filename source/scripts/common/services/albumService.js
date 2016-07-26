@@ -2,17 +2,29 @@
 {
     'use strict';
 
-    var _injectParams = ['$http', '$q'];
+    var _injectParams = ['$http', '$q', 'CacheFactory'];
 
-    var _service = function ($http, $q)
+    var _service = function ($http, $q, CacheFactory)
     {
+        var _self = this;
+
         var _serviceBase = 'https://jsonplaceholder.typicode.com/albums';
 
-        var _getAllAlbums = function ()
+        if (!CacheFactory.get('albumCache')) {
+            CacheFactory.createCache('albumCache', {
+                deleteOnExpire: 'aggressive',
+                recycleFreq: 60000
+            });
+        }
+
+        var _albumCache = CacheFactory.get('albumCache');
+
+
+        _self.getAllAlbums = function ()
         {
             var deferred = $q.defer();
 
-            $http.jsonp(_serviceBase + '?callback=JSON_CALLBACK')
+            $http.get(_serviceBase, {cache: _albumCache})
             .success(function (data, status, headers, config)
             {
                 deferred.resolve(data);
@@ -25,30 +37,44 @@
             return deferred.promise;
         }
 
-        var _getAlbumById = function (albumId)
+        _self.getAlbumById = function (albumId)
         {
             var deferred = $q.defer();
 
-            var request = {
-                method: "GET",
-                url: _serviceBase + '/' + albumId,
-            };
-            $http(request)
-                .then(function (results)
-                {                                        
-                    deferred.resolve(results.data);
-                }, function (status)
+            $http.get(_serviceBase + '/' + albumId , {cache: _albumCache})
+                .success(function (data, status, headers, config)
+                {
+                    deferred.resolve(data);
+                })
+                .error(function (data, status, headers, config)
                 {
                     deferred.reject(status);
                 });
 
+            return deferred.promise;
+        }
+
+        _self.getPhotosByAlbumId = function (albumId)
+        {
+            var deferred = $q.defer();
+
+            $http.get(_serviceBase + '/' + albumId + '/photos', {cache: _albumCache})
+                .success(function (data, status, headers, config)
+                {
+                    deferred.resolve(data);
+                })
+                .error(function (data, status, headers, config)
+                {
+                    deferred.reject(status);
+                });
 
             return deferred.promise;
         }
 
         return {
-            getAllAlbums: _getAllAlbums,
-            getAlbumById: _getAlbumById
+            getAllAlbums: _self.getAllAlbums,
+            getAlbumById: _self.getAlbumById,
+            getPhotosByAlbumId: _self.getPhotosByAlbumId
         };
     };
 

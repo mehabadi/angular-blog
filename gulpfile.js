@@ -54,10 +54,11 @@ gulp.task('loadScripts', function ()
 			config.bowerDir + '/respond/dest/respond.min.js',
             config.bowerDir + '/requirejs/require.js',
             config.bowerDir + '/text/text.js',
-            config.vendorDir + '/prettyPhoto/js/jquery.prettyPhoto.js',
             config.bowerDir + '/angular-loading-bar/build/loading-bar.min.js',
             config.bowerDir + '/angular-md5/angular-md5.min.js',
             config.bowerDir + '/angular-cache/dist/angular-cache.min.js',
+            config.vendorDir + '/prettyPhoto/js/jquery.prettyPhoto.js',
+            config.vendorDir + '/theme/js/main.js',
         ])
         .on('error', notify.onError(function (error)
         {

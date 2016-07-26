@@ -5,8 +5,6 @@
     require.config({
         baseurl: '/scripts',
         paths: {
-            'jquery': '../assets/js/jquery.min',
-            'bootstrap': '../assets/js/bootstrap.min',
             'angular': '../assets/js/angular.min',
             'angular-resource': '../assets/js/angular-resource.min',
             'angular-sanitize': '../assets/js/angular-sanitize.min',
@@ -26,11 +24,7 @@
         },
         shim: {            
             angular: {
-                deps: ['bootstrap'],
                 exports: 'angular'
-            },
-            bootstrap: {
-                deps: ['jquery'],
             },
             'angular-sanitize':{
                 deps: ['angular'],
@@ -77,17 +71,12 @@
             'routes' : {
                 deps: ['angular']
             },
-            'prettyPhoto': {
-                deps: ['jquery'],
-            },
             app: {
                 deps: [
-                    'jquery',
                     'angular',
                     'angular-material',                     
                     'routeResolver', 
 					'routes',
-                    'prettyPhoto'
                 ]
             }
         },

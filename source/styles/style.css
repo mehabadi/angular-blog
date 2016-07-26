@@ -2870,3 +2870,5 @@ shortcodes page css
 .single_comments p{display: block;overflow: hidden;text-overflow: ellipsis;width: 85%;white-space: nowrap;}
 .widget .blog-content{margin-bottom: 20px;border-bottom: 1px solid #eee;}
 .widget .blog-content h4 {width: 100%}
+.recent-work-wrap .overlay .preview{position: absolute; bottom: 10px;}
+.carousel-inner>.item>img{width: 100%;max-height: 600px;}
