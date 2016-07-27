@@ -53,29 +53,11 @@
             return deferred.promise;
         }
 
-        _self.getCommentsByPostId = function (postId)
-        {
-            var deferred = $q.defer();
 
-
-            $http.get(_serviceBase + '/' + postId + '/comments', {cache: _postCache})
-                .success(function (data, status, headers, config)
-                {
-                    deferred.resolve(data);
-                })
-                .error(function (data, status, headers, config)
-                {
-                    deferred.reject(status);
-                });
-
-
-            return deferred.promise;
-        }
 
         return {
             getAllPosts: _self.getAllPosts,
-            getPostById: _self.getPostById,
-            getCommentsByPostId: _self.getCommentsByPostId
+            getPostById: _self.getPostById
         };
     };
 

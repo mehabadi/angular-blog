@@ -24,7 +24,7 @@
 			});
 
 			//get post's comments
-			var comments = postService.getCommentsByPostId($routeParams.id);
+			var comments = commentService.getCommentsByPostId($routeParams.id);
 			comments.then(function (data)
 			{
 				$scope.comments = data;

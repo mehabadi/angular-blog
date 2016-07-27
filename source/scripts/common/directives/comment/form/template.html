@@ -5,29 +5,34 @@
         <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
     </div>
 
-    <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+    <form name="commentForm"  data-ng-submit="saveComment()" class="contact-form">
         <div class="row">
+
+            <div data-ng-show="message" class="alert alert-success alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span></button> {{message}}
+            </div>
             <div class="col-sm-5">
                 <div class="form-group">
                     <label>Name *</label>
-                    <input type="text" class="form-control" required="required">
+                    <!--<input type="hidden" class="form-control" data-ng-model="commentForm.postId" data-ng-model="postId">-->
+                    <input type="text" class="form-control" id="name" data-ng-model="commentForm.name" required="required">
+                    <p ng-show="commentForm.name.$invalid && !commentForm.name.$pristine" class="help-block">You name is required.</p>
                 </div>
                 <div class="form-group">
                     <label>Email *</label>
-                    <input type="email" class="form-control" required="required">
-                </div>
-                <div class="form-group">
-                    <label>URL</label>
-                    <input type="url" class="form-control">
+                    <input type="email" class="form-control" data-ng-model="commentForm.email" required="required">
+                    <p data-ng-show="commentForm.email.$invalid && !commentForm.email.$pristine" class="help-block">Enter a valid email.</p>
                 </div>
             </div>
             <div class="col-sm-7">
                 <div class="form-group">
                     <label>Message *</label>
-                    <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                    <textarea name="message" id="message" data-ng-model="commentForm.body" required="required" class="form-control" rows="5"></textarea>
+                    <p data-ng-show="commentForm.body.$invalid && !commentForm.body.$pristine" class="help-block">Type your message.</p>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                    <button type="submit" class="btn btn-primary btn-lg"  data-ng-disabled="commentForm.$invalid">Submit Message</button>
                 </div>
             </div>
         </div>

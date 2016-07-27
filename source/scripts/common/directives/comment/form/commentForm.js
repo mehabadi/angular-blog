@@ -7,8 +7,29 @@ define(['app', 'text!./template.html'],
 
         var _directive = function ()
         {
-            var _controller = ['$scope', function controller($scope)
+            var _controller =
+                ['$scope', 'commentService',
+                function controller($scope, commentService)
             {
+                $scope.commentForm = {};
+
+                $scope.saveComment = function () {
+
+                    if ($scope.commentForm.$valid) {
+                        $scope.commentForm.postId = $scope.postId;
+                        var data = commentService.addComment($scope.commentForm);
+                        data.then(function (data)
+                        {
+                            //todo: publish
+                            debugger;
+                            $scope.message = 'Your Comment saved successfully.';
+                        }, function (status)
+                        {
+                            console.log(status);
+                        });
+                    }
+                    $scope.commentForm = {};
+                };
             }];
 
             return {
@@ -17,7 +38,7 @@ define(['app', 'text!./template.html'],
                 template: template,
                 controller: _controller,
                 scope: {
-                    comment: '='
+                    postId: '='
                 }
             };
         };

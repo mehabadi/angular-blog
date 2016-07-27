@@ -1,6 +1,6 @@
 define([
         './postMeta.js',
-        '../../../services/postService.js',
+        '../../../services/commentService.js',
         '../../../services/userService.js',
     ],
     function () { 'use strict'; });
