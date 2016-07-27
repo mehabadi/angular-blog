@@ -8,8 +8,8 @@ define(['app', 'text!./template.html'],
         var _directive = function ()
         {
             var _controller =
-                ['$scope', 'commentService',
-                function controller($scope, commentService)
+                ['$scope', 'commentService', 'pubSub',
+                function controller($scope, commentService, pubSub)
             {
                 $scope.commentForm = {};
 
@@ -20,8 +20,7 @@ define(['app', 'text!./template.html'],
                         var data = commentService.addComment($scope.commentForm);
                         data.then(function (data)
                         {
-                            //todo: publish
-                            debugger;
+                            pubSub.publish('retriveComments');
                             $scope.message = 'Your Comment saved successfully.';
                         }, function (status)
                         {

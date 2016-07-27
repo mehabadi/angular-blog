@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    var app = angular.module('app', ['ngRoute', 'ngMaterial', 'routeResolverService', 'Routes', 'ngResource', 'ngSanitize', 'angular-loading-bar', 'ngAnimate', 'angular-md5', 'angular-cache']);
+    var app = angular.module('app', ['ngRoute', 'ngMaterial', 'routeResolverService', 'Routes', 'ngResource', 'ngSanitize', 'angular-loading-bar', 'ngAnimate', 'angular-md5', 'angular-cache', 'PubSubModule']);
     
     //app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
     //    $sceDelegateProvider.resourceUrlWhitelist(['self', /^https?:\/\/(cdn\.)?localhost/]);
@@ -38,6 +38,10 @@
                 app.service = $provide.service;
 
                 angular.extend(CacheFactoryProvider.defaults, { maxAge: 60 * 60 * 1000 });
+
+                app.config(['pubSubProvider', function(pubSubProvider) {
+                    pubSubProvider.setMaxHistory(3);
+                }]);
 
                 //$locationProvider.html5Mode({
                 //    enabled: true,

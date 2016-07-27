@@ -5,8 +5,8 @@
     var _injectParams = ['$scope'];
 
     var _controller = 
-		['$scope', '$rootScope', 'postService', 'commentService', '$routeParams',
-		function ($scope, $rootScope, postService, commentService, $routeParams)
+		['$scope', '$rootScope', 'postService', 'commentService', '$routeParams', 'pubSub',
+		function ($scope, $rootScope, postService, commentService, $routeParams, pubSub)
 		{
 			$rootScope.pageTitle = "Blog";
 			$rootScope.currentPage = "single";
@@ -24,14 +24,22 @@
 			});
 
 			//get post's comments
-			var comments = commentService.getCommentsByPostId($routeParams.id);
-			comments.then(function (data)
-			{
-				$scope.comments = data;
-			}, function (status)
-			{
-				console.log(status);
-			});
+			var getComments = function(){
+				var data = commentService.getCommentsByPostId($routeParams.id);
+				data.then(function (data)
+				{
+					$scope.comments = data;
+				}, function (status)
+				{
+					console.log(status);
+				});
+			}
+
+			getComments();
+
+			pubSub.subscribe('retriveComments', getComments);
+
+
 		}];
 
     _controller.$inject = _injectParams;

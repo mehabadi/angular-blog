@@ -21,6 +21,7 @@
             'angular-loading-bar': '../assets/js/loading-bar.min',
             'angular-md5': '../assets/js/angular-md5.min',
             'angular-cache': '../assets/js/angular-cache.min',
+            'angular-pub-sub': '../assets/js/angular-pub-sub.min',
         },
         shim: {            
             angular: {
@@ -62,8 +63,12 @@
                 deps: ['angular'],
                 exports: 'angular'
             },
+            'angular-pub-sub': {
+                deps: ['angular'],
+                exports: 'angular'
+            },
             'angular-material':{
-                deps: ['angular', 'angular-route', 'angular-resource', 'angular-animation', 'angular-aria', 'angular-messages', 'angular-sanitize', 'angular-loading-bar', 'angular-md5', 'angular-cache'],
+                deps: ['angular', 'angular-route', 'angular-resource', 'angular-animation', 'angular-aria', 'angular-messages', 'angular-sanitize', 'angular-loading-bar', 'angular-md5', 'angular-cache', 'angular-pub-sub'],
             },
             'routeResolver': {
                 deps: ['angular']
