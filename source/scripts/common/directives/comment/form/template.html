@@ -1,17 +1,14 @@
 <div id="contact-page clearfix" data-ng-cloak>
-    <div class="status alert alert-success" style="display: none"></div>
+
     <div class="message_heading">
         <h4>Leave a Replay</h4>
         <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
     </div>
 
-    <form name="commentForm"  data-ng-submit="saveComment()" class="contact-form">
+    <div class="status alert alert-success" data-ng-show="message" role="alert">{{message}}</div>
+    
+    <form name="commentForm" data-ng-hide="message" data-ng-submit="saveComment()" class="contact-form">
         <div class="row">
-
-            <div data-ng-show="message" class="alert alert-success alert-dismissible fade in" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span></button> {{message}}
-            </div>
             <div class="col-sm-5">
                 <div class="form-group">
                     <label>Name *</label>
