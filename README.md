@@ -1,8 +1,16 @@
-# DESCRIPTION
+# Angular Blog
 
-This project is a simple angular application which is based on [typicode.com](https://jsonplaceholder.typicode.com/) API services.
+This project is a simple angular application which is based on [typicode.com](https://jsonplaceholder.typicode.com/) API services. [Live Demo](http://angular.mehabadi.ir/)
 
-# INSTALLATION
+### Table of Contents
+- [Installation](#installation)
+- [Add Gulp to a Project](#add-gulp-to-a-project)
+- [Install Bower](#install-bower)
+- [Initialize the project](#initialize-the-project)
+- [Run the project](#run-the-project)
+
+
+### Installation
 
 This project requires [Node.js](https://nodejs.org/) v4+ to run.
 
